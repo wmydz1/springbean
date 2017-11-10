@@ -8,4 +8,29 @@
         <property name="message" value="Hello World!"/>
     </bean>
 
+    <bean id="helloWorld-prototype" class="com.logoocc.main.HelloWorld" scope="prototype">
+        <property name="message" value="Hello World! prototype!"/>
+    </bean>
+
+    <bean id="lifecyclebean"
+          class="com.logoocc.main.LifeCycleBean" init-method="init" destroy-method="destroy"/>
+
+    <bean id="apple" class="com.logoocc.main.Apple"
+          init-method="init" destroy-method="destroy">
+        <property name="message" value="a fresh apple!"/>
+    </bean>
+
+    <bean class="com.logoocc.main.InitApple" />
+
+    <bean id="pear" class="com.logoocc.main.Pear">
+        <property name="message1" value="Pear !"/>
+        <property name="message2" value="Pear is good!"/>
+    </bean>
+
+    <bean id="smallpear" class="com.logoocc.main.SmallPear" parent="pear">
+        <property name="message1" value="Small pear!"/>
+        <property name="message3" value="Small pear sweet!"/>
+    </bean>
+
+
 </beans>

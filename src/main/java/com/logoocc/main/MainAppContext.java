@@ -12,5 +12,12 @@ public class MainAppContext {
         ApplicationContext context = new  ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld obj = (HelloWorld) context.getBean("helloWorldss");
         obj.getMessage();
+        System.out.println("--------------------");
+        HelloWorld objprototype = (HelloWorld) context.getBean("helloWorld-prototype");
+        objprototype.getMessage();
+
+        LifeCycleBean lifecyclebean = (LifeCycleBean) context.getBean("lifecyclebean");
+
+
     }
 }
